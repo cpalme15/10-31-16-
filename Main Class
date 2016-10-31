@@ -1,0 +1,16 @@
+/*date:10/31/16
+ * COSC 11 10/31/16
+ * 
+ */
+public class Classwork_card {
+
+	public static void main(String[] args) {
+		Card c1=new Card();
+		Card c2=new Card();
+		System.out.println(" Your hand is" +c1+" " +c2);
+		if (c1.pair(c2)){
+			System.out.println("You have a Pair");
+		}
+	}
+
+}
