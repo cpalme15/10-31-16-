@@ -1,0 +1,57 @@
+import java.util.Random;
+
+public class Card {
+	private char rank,suit;
+	private Random r=new Random();
+
+	public Card() {
+		rank=readRank();
+		suit=readSuit();
+		
+	}
+	
+	@Override
+	public String toString() {
+		return " "+ rank + suit ;
+	}
+
+	public char getRank() {
+		return rank;
+	}
+
+	public void setRank(char rank) {
+		this.rank = rank;
+	}
+
+	private char readRank()
+	{
+		int n=r.nextInt(13)+1;
+		switch (n)
+		{
+		case 1:  return 'A';
+		case 13: return 'K';
+		case 12: return 'Q';
+		case 11: return 'J';
+		case 10: return 'T';
+	
+		}
+		return (char)('0'+n);
+	}
+	private char readSuit()
+	{
+		int n=r.nextInt(4)+1;
+		switch(n)
+		{
+		case 1: return '\u2660';//spades
+		case 2: return '\u2663';//clubs
+		case 3: return '\u2665';//hearts
+
+		}
+	    return '\u2666';//diamonds
+	}
+	public boolean pair(Card temp)
+	{
+		return (this.rank==temp.rank);
+			
+	}
+}
